@@ -60,11 +60,6 @@ html {
   flex-wrap: wrap;
 }
 
-.memory-card {
-  width: 28vw;
-  margin: 0.5em;
-}
-
 #well-done {
   color: #f09081;
   transform: rotate(-11deg);
@@ -74,4 +69,17 @@ html {
 #happy-cat {
   width: 5rem;
   margin-top: 2.5rem;
+}
+
+
+/* DO NO REMOVE - MAKES THE JS WORK */
+.cards {
+  width: 20%;
+  height: 30%;
+  margin: 16px;
+}
+
+.memory-card {
+  width: 100%;
+  height: auto;
 }
