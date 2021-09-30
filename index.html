@@ -1,32 +1,65 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="game_and_score_style.css"/>
     <link rel="stylesheet" href="styleIndex.css" />
-    <script src="home.js"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
     </style>
-  </head>
-  <body>
-    <div id="Home">
+</head>
+<body>
+
+  
+  <! -- Game Page -->
+
+  <div id="game-page" style="display:none">
+      <h3 class="timer">Time</h3>
+
+      <div id="all-memory-cards">
+          <img alt = "card-back" class="memory-card" src="images/patte-avec-fond.png">
+          <img alt = "card-back" class="memory-card" src="images/patte-avec-fond.png">
+          <img alt = "card-back" class="memory-card" src="images/patte-avec-fond.png">
+          <img alt = "card-back" class="memory-card" src="images/patte-avec-fond.png">
+          <img alt = "card-back" class="memory-card" src="images/patte-avec-fond.png">
+          <img alt = "card-back" class="memory-card" src="images/patte-avec-fond.png">
+          <img alt = "card-back" class="memory-card" src="images/patte-avec-fond.png">
+          <img alt = "card-back" class="memory-card" src="images/patte-avec-fond.png">
+          <img alt = "card-back" class="memory-card" src="images/patte-avec-fond.png">
+          <img alt = "card-back" class="memory-card" src="images/patte-avec-fond.png">
+          <img alt = "card-back" class="memory-card" src="images/patte-avec-fond.png">
+          <img alt = "card-back" class="memory-card" src="images/patte-avec-fond.png">
+      </div> 
+  </div> 
+          
+
+<! -- Home Page -->
+
+    <div id="home-page" style="display:block">
 
       <h1 class="Welcome">WELCOME !</h1>
 
       <h2 class="WhatName">What’s your name ?</h2>
 
+      <! -- User Name -->
+
       <div class="ButtonOK">
+        <form>
         <input
         type="text"
         name="field1"
         placeholder="Enter your name...">
         <button>Ok</button>
+      </form>
       <div/>
       
-
+      <! -- Bouton Play -->
+      <a href="javascript:SwapDivsWithClick('home-page','game-page')">
       <svg
         id="play"
         viewBox="0 0 163 163"
@@ -56,7 +89,13 @@
           </g>
         </g>
       </svg>
+    </a>
     </div>
+
+
     <img src="021-kitty-28.png" width="67" height="67"/>
+    <script src="home.js"></script>
+   
+
   </body>
 </html>
