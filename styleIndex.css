@@ -1,21 +1,40 @@
-body {
+/* body {
   background-color: #ffdc9c;
-}
-
-#Home {
   font-family: 'Acme', sans-serif;
+} */
+
+.home-head {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.Welcome {
+.bigbuttonplay {
+  display: none;
+}
+
+#game-page {
+  display: none;
+}
+
+#score-page {
+  display: none;
+}
+
+   
+/*
+.welcome {
   display: flex;
   flex-direction: column;
   justify-content: center;
   font: 36px, 'acme', sans-serif;
   text-align: center;
-
 }
 
-.WhatName {
+.whatName {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,7 +44,7 @@ body {
 
 /* Boutton OK Home Page */
 
-.buttonOK {
+/* .buttonOK {
     
     display:inline-block;
     padding:0.3em 1.2em;
@@ -48,11 +67,11 @@ body {
     display:block;
     margin:0.2em auto;
      }
-    }
+    } */
 
 /* Boutton Play Home Page */
 
-    svg#play {
+    /* svg#play {
       width:100px;
       margin: 120px auto;
       display:block;
@@ -94,4 +113,4 @@ body {
         right:0;
         margin:10px 0px 0px 20px;
         padding:0px;
-      }
+      } */ 
