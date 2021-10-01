@@ -40,6 +40,10 @@ body {
 
 
 /****** SCORE PAGE ******/
+#timer-container {
+  display: none;
+}
+
 #timer-img {
   height: 2.5rem;
   display: block; 

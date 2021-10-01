@@ -1,91 +1,141 @@
+/***** GAME CONSTANTS *****/
 const cardGame = document.querySelectorAll('.cards');
 const playBtn = document.getElementById('button-that-plays');
 const homeDiv = document.getElementById('home-page');
+const timerDiv = document.getElementById('timer-container');
 const gameDiv = document.getElementById('game-page');
 const scoreDiv = document.getElementById('score-page');
 const playAgainBtn = document.getElementById('play-again-btn');
 
-/******* HOME PLAY BUTTON MAKE GAME PAGE APPEAR *******/
-playBtn.onclick = function() {
-    homeDiv.style.display = 'none';
-    gameDiv.style.display = 'block';
-}
+/***** TIMER CONSTANTS *****/
+let minuts = 00;
+let seconds = 00;
+let tens = 00;
+// 1 ten = 0.01 second, 100 tens = 0.1 second 
+const appendSeconds = document.getElementById('seconds');
+const appendMinuts = document.getElementById('minuts');
+const appendTens = document.getElementById('tens');
+const buttonStop = document.getElementById('stop');
+const buttonReset = document.getElementById('reset');
+let myIntervalVar;
 
 
-/*********CREATE ARRAY WITH 12 KITTY IMAGES (6X2)************/
+/* ****** HOME PLAY BUTTON MAKE GAME PAGE APPEAR ****** */
+playBtn.onclick = function () {
+  homeDiv.style.display = 'none';
+  timerDiv.style.display = 'block';
+  gameDiv.style.display = 'block';
+  myIntervalVar = setInterval(startTimer, 10);
+};
+
+/* ********CREATE ARRAY WITH 12 KITTY IMAGES (6X2)*********** */
 const kittyImg = [];
 let n;
-    for (let i = 0; i < 12; i++) {
-        if (i < 6) {
-            n = i + 1;
-        } else if (i >= 6) {
-            n = i - 5;
-        }
-        kittyImg[i] = `images/kitty${n}.svg`;
-    }
+for (let i = 0; i < 12; i++) {
+  if (i < 6) {
+    n = i + 1;
+  } else if (i >= 6) {
+    n = i - 5;
+  }
+  kittyImg[i] = `images/kitty${n}.svg`;
+}
 
-
-//initiate varibales used in the the loop
+// initiate varibales used in the the loop
 let revealedImg = [];
 let revealedCard = [];
 let allCards = [];
 
-/********** LOOP THOURGH THE CARDS AND ADD RANDOM KITTY IMAGE ***********/
+/* ********* LOOP THOURGH THE CARDS AND ADD RANDOM KITTY IMAGE ********** */
 for (let i = 0; i < cardGame.length; i++) {
-    let card = cardGame[i];
+  let card = cardGame[i];
 
-    // generate random number
-    let number = Math.floor(Math.random() * kittyImg.length);
+  // generate random number
+  let number = Math.floor(Math.random() * kittyImg.length);
 
-    let newImg = document.createElement('img');
-    // create a new array containing the random img name from the array
-    newImg.src = kittyImg.splice(number, 1)[0];
-    newImg.style.display = 'none';
+  let newImg = document.createElement('img');
+  // create a new array containing the random img name from the array
+  newImg.src = kittyImg.splice(number, 1)[0];
+  newImg.style.display = 'none';
 
-    card.appendChild(newImg);
+  card.appendChild(newImg);
 
-    /******* ADD EVENT LISTENER ON CARD WITH GAME ACTIONS *******/
-    card.addEventListener('click', function() {
-        // change the card image from back to kitty image 
-        card.firstElementChild.style.display = 'none';
-        card.lastElementChild.style.display = 'block';
+  /* ****** ADD EVENT LISTENER ON CARD WITH GAME ACTIONS ****** */
+  card.addEventListener('click', function () {
+    // change the card image from back to kitty image
+    card.firstElementChild.style.display = 'none';
+    card.lastElementChild.style.display = 'block';
 
-        revealedImg.push(card.lastElementChild);
-        revealedCard.push(card);
+    revealedImg.push(card.lastElementChild);
+    revealedCard.push(card);
 
-        // TWO FUNCTIONS TO BE CALLED LATER USING SETTIMEOUT
-        let unreveal = function () {
-            revealedImg[0].style.display = 'none';
-            revealedCard[0].firstElementChild.style.display = 'block';
-            revealedImg[1].style.display = 'none';
-            revealedCard[1].firstElementChild.style.display = 'block';
-        }
+    // TWO FUNCTIONS TO BE CALLED LATER USING SETTIMEOUT
+    let unreveal = function () {
+      revealedImg[0].style.display = 'none';
+      revealedCard[0].firstElementChild.style.display = 'block';
+      revealedImg[1].style.display = 'none';
+      revealedCard[1].firstElementChild.style.display = 'block';
+    };
 
-        let reinitializeArray = function () {
-            revealedImg = [];
-            revealedCard = [];
-        }
+    let reinitializeArray = function () {
+      revealedImg = [];
+      revealedCard = [];
+    };
 
-        if (revealedImg.length === 2) {
-            if (revealedImg[0].attributes.src.value === revealedImg[1].attributes.src.value) {
-                revealedCard[0].style.opacity = '50%';
-                revealedCard[1].style.opacity = '50%';
-                // push all cards to a variable for the final count
-                allCards.push(revealedCard[0]);
-                allCards.push(revealedCard[1])
-            } else {
-                setTimeout(unreveal, 600);
-            }
-            setTimeout(reinitializeArray, 601);
-        }
+    if (revealedImg.length === 2) {
+      if (
+        revealedImg[0].attributes.src.value ===
+        revealedImg[1].attributes.src.value
+      ) {
+        revealedCard[0].style.opacity = '50%';
+        revealedCard[1].style.opacity = '50%';
+        // push all cards to a variable for the final count
+        allCards.push(revealedCard[0]);
+        allCards.push(revealedCard[1]);
+      } else {
+        setTimeout(unreveal, 600);
+      }
+      setTimeout(reinitializeArray, 601);
+    }
 
-        if (allCards.length === 12) {
-           gameDiv.style.display = 'none';
-           scoreDiv.style.display = 'block';
-        }
-    })
+    if (allCards.length === 12) {
+      gameDiv.style.display = 'none';
+      scoreDiv.style.display = 'block';
+
+      clearInterval(myIntervalVar);
+    }
+  });
 }
 
+/* TIMER FUNCTION */
+function startTimer() {
+  tens++;
+  if (tens <= 9) {
+    appendTens.innerHTML = '0' + tens;
+  }
+
+  if (tens > 9) {
+    appendTens.innerHTML = tens;
+  }
+
+  if (tens > 99) {
+    seconds++;
+    if (seconds <= 9) appendSeconds.innerHTML = '0' + seconds;
+    else if (seconds > 9) appendSeconds.innerHTML = seconds;
+    tens = 0;
+    appendTens.innerHTML = '0' + 0;
+  }
+
+  if (seconds > 60) {
+    minuts++;
+    appendMinuts.innerHTML = '0' + minuts;
+    seconds = 0;
+    appendSeconds.innerHTML = '0' + 0;
+  }
+
+  if (minuts > 9) {
+    appendMinuts.innerHTML = minuts;
+  }
+}
 
 // playAgainBtn.onclick = function() {
 //     scoreDiv.style.display = 'none';
