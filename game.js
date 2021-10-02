@@ -1,6 +1,6 @@
 /***** GAME CONSTANTS *****/
 const cardGame = document.querySelectorAll('.cards');
-const playBtn = document.getElementById('button-that-plays');
+const playBtn = document.getElementById('play-btn');
 const homeDiv = document.getElementById('home-page');
 const timerDiv = document.getElementById('timer-container');
 const gameDiv = document.getElementById('game-page');
@@ -23,7 +23,7 @@ let myIntervalVar;
 /* ****** HOME PLAY BUTTON MAKE GAME PAGE APPEAR ****** */
 playBtn.onclick = function () {
   homeDiv.style.display = 'none';
-  timerDiv.style.display = 'block';
+  timerDiv.style.display = 'flex';
   gameDiv.style.display = 'block';
   myIntervalVar = setInterval(startTimer, 10);
 };
@@ -55,6 +55,7 @@ for (let i = 0; i < cardGame.length; i++) {
   let newImg = document.createElement('img');
   // create a new array containing the random img name from the array
   newImg.src = kittyImg.splice(number, 1)[0];
+  newImg.classList.add('front-img');
   newImg.style.display = 'none';
 
   card.appendChild(newImg);

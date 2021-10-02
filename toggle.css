@@ -1,11 +1,14 @@
-body {
-  background: #ffdc9c;
-}
-
-.setting-container {
-  padding-top: 30%;
+#setting-container {
+  display: none;
+  /* padding-top: 30%;
   width: 60%;
-  margin: auto;
+  margin: auto; */
+  width: 22%;
+  height: 100vh;
+  background-color: #f9f9fc;
+  position: absolute;
+  right: 0;
+  top: 83px;
 }
 
 .settings {

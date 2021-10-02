@@ -6,58 +6,64 @@ body {
 }
 
 /****** GAME PAGE ******/
-/* UPDATE */
 #game-page {
+  display: none;
   width: 80%;
   margin: auto;
-  display: block;
 }
 
 #all-memory-cards {
   width: 60%;
   margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-}
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1em;
+  margin-bottom: 1em;
+} 
 
-/* .memory-card {
-  width: 28vw;
-  margin: 0.5em;
-} */
-
-/* DO NO REMOVE - MAKES THE JS WORK */
 .cards {
-  width: 20%;
-  height: 30%;
-  margin: 16px;
+  width: 100%;
 }
 
 .memory-card {
   width: 100%;
   height: auto;
+} 
+
+.front-img {
+  width: 100%;
+  height: auto;
 }
 
 
-
-/****** SCORE PAGE ******/
+/****** TIMER ******/
 #timer-container {
   display: none;
+  background-color: #f9f9fc;
+  border-radius: 6px;
+  width: 10%;
+  height: auto;
+  margin: 1em auto;
 }
 
 #timer-img {
-  height: 2.5rem;
-  display: block; 
-  margin: 1rem auto;
+  width: 25%;
+  height: auto;
+  padding: 8px;
 } 
 
 .timer {
-  width: 10rem;
-  text-align: center;
-  background-color: #f9f9fc;
+  width: 10rem;  
   margin: auto;
-  padding: 0.5rem;
+  padding-left: 1em;
   font-size: 14px;
-  font-family: 'Lato', sans-serif;
+}
+
+
+/****** SCORE PAGE ******/
+#score-page {
+  display: none;
 }
 
 #well-done {
@@ -65,7 +71,7 @@ body {
   margin: 3rem;
   font-family: 'Acme', sans-serif;
   color: #f09081;
-  transform: rotate(-11deg);
+  transform: rotate(-5deg);
   font-size: 2rem;
 }
 
