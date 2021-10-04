@@ -1,0 +1,53 @@
+/*GENERAL SETTINGS*/
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+body {
+  background-color: rgb(255, 220, 156);
+  font-family: 'Acme', sans-serif;
+}
+footer {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+}
+h1 {
+  text-align: center;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+/*TEAM MEMBERS*/
+.member {
+  display: flex;
+  align-items: center;
+  margin: 40px;
+}
+
+.member-img {
+  background-color: rgb(240, 144, 129);
+  width: 77px;
+  height: 77px;
+  border-radius: 100%;
+}
+
+.member-img img {
+  width: 100%;
+  height: auto;
+}
+
+.presentation p {
+  margin: 8px 0 0;
+}
+
+.presentation {
+  padding-left: 32px;
+}
+
+h3 {
+  margin: 0;
+}
