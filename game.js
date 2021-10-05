@@ -11,7 +11,7 @@ const playAgainBtn = document.getElementById('play-again-btn');
 let minuts = 00;
 let seconds = 00;
 let tens = 00;
-// 1 ten = 0.01 second, 100 tens = 0.1 second 
+// 1 ten = 0.01 second, 100 tens = 0.1 second
 const appendSeconds = document.getElementById('seconds');
 const appendMinuts = document.getElementById('minuts');
 const appendTens = document.getElementById('tens');
@@ -19,6 +19,17 @@ const buttonStop = document.getElementById('stop');
 const buttonReset = document.getElementById('reset');
 let myIntervalVar;
 
+/***** SCORE BOARD CONSTANTS *****/
+const player = document.querySelector('#player-name');
+const nameBtn = document.getElementById('name-btn');
+const scoreList = document.getElementById('score-list');
+let score;
+
+/* retrieve player name */
+let playerName;
+nameBtn.onclick = function () {
+  return (playerName = player.value);
+};
 
 /* ****** HOME PLAY BUTTON MAKE GAME PAGE APPEAR ****** */
 playBtn.onclick = function () {
@@ -103,6 +114,9 @@ for (let i = 0; i < cardGame.length; i++) {
       scoreDiv.style.display = 'block';
 
       clearInterval(myIntervalVar);
+      let score = document.createElement('p');
+      score.innerHTML = `${playerName} did it in ${appendMinuts.innerHTML}:${appendSeconds.innerHTML}:${appendTens.innerHTML}`;
+      scoreList.appendChild(score);
     }
   });
 }
@@ -142,3 +156,5 @@ function startTimer() {
 //     scoreDiv.style.display = 'none';
 //     gameDiv.style.display = 'block';
 // }
+
+console.log(playerName, score);
