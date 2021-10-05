@@ -1,0 +1,56 @@
+/* -- PAGE SETTINGS -- */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body {
+    background-color: rgb(255, 220, 156) ;}
+
+#burgerIcon {
+    cursor: pointer;
+    font-size: 3em;
+    /*color to define*/
+}
+
+
+/* -- SIDE NAVIGATION SETTINGS -- */
+.sidenav {
+    height: 25%; /* height related to page */ 
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* No border related to page */
+    left: 0;
+    background-color: white;
+    overflow-x: hidden; /* Hide text while not clicked */
+    padding-top: 5em; /* Place content 5em from the top (close btn) */
+    transition: 0.8s; /* 0.8 second transition effect to slide in the sidenav */
+  }
+  
+  /* -- NAVIGATION MENU LINKS -- */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-family: Lato;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* -- CHANGE COLOR WHEN HOVER -- really needed ? */
+  .sidenav a:hover {
+    color: #3d3d3d;
+  }
+  
+  /* Position and style the close button (top left corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    font-size: 36px;
+    margin-left: 10px;
+  }
+
+  /* @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }  */
+  
