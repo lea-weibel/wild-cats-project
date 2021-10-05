@@ -1,12 +1,16 @@
-body {
+:root {
   font-family: 'Lato', sans-serif; 
+  font-size: 16px;
   overflow: hidden;
+  --dark-purple: #645e96;
+  --white: #f9f9fc;
+  --black: rgb(27, 27, 27);
+  --pink: #d17589;
 }
 
 /***** NAVBAR *****/
 .navbar {
-  background-color: #645e96;
-  padding: 1em;
+  background-color: var(--dark-purple);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,19 +19,19 @@ body {
 
 h1 {
   margin: 0;
-  color: #f9f9fc;
+  color: var(--white);
 }
 
 ul {
   display: flex;
   justify-content: space-between;
-  width: 20%;
+  width: 350px;
   list-style: none;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--black);
 }
 
 
@@ -37,11 +41,11 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   width: 80%;
-  margin: 120px auto;
+  margin: 10% auto;
 }
 
 .home-headings {
-  width: 40%;
+  width: min(100%, 500px);
 }
 
 .home-headings h2 {
@@ -59,7 +63,7 @@ a {
 }
 
 .home-cta {
-  width: 40%;
+  width: min(100%, 500px);
   padding-top: 1.3em;
 }
 
@@ -73,28 +77,29 @@ a {
   display: flex;
   justify-content: space-between;
   border-radius: 6px;
-  border: 2px solid #645e96;
-  margin-top: .8em;
+  border: 2px solid var(--dark-purple);
+  margin-top: 1em;
   box-sizing: border-box;
-  background-color: #f9f9fc;  
+  background-color: var(--white);  
 }
 
 .enter-name input {
-  background-color: #f9f9fc;
+  background-color: var(--white);
   border: none;
   border-radius: 6px;
   padding: 1em;
   outline: none;
-  caret-color: #d17589;
+  caret-color: var(--pink);
 }
 
 #name-btn {
-  width: 128px;
+  width: 8rem;
   border: none;
-  background-color:  #645e96;
+  background-color: var(--dark-purple);
   border-radius: 3px;
   cursor: pointer;
-  color: #fff;
+  color: var(--white);
+  padding: 1em;
 }
 
 #name-btn:hover {
