@@ -11,14 +11,13 @@ const playAgainBtn = document.getElementById('play-again-btn');
 let minuts = 00;
 let seconds = 00;
 let tens = 00;
-// 1 ten = 0.01 second, 100 tens = 0.1 second 
+// 1 ten = 0.01 second, 100 tens = 0.1 second
 const appendSeconds = document.getElementById('seconds');
 const appendMinuts = document.getElementById('minuts');
 const appendTens = document.getElementById('tens');
 const buttonStop = document.getElementById('stop');
 const buttonReset = document.getElementById('reset');
 let myIntervalVar;
-
 
 /* ****** HOME PLAY BUTTON MAKE GAME PAGE APPEAR ****** */
 playBtn.onclick = function () {
@@ -64,6 +63,12 @@ for (let i = 0; i < cardGame.length; i++) {
     // change the card image from back to kitty image
     card.firstElementChild.style.display = 'none';
     card.lastElementChild.style.display = 'block';
+
+    // SOUNDS
+
+    let meow = new Audio('sounds/ANMLCat_Miaulement chat 10 (ID 1898)_LS.mp3');
+    // document.getElementsByTagName('audio');
+    console.log(meow);
 
     revealedImg.push(card.lastElementChild);
     revealedCard.push(card);
@@ -136,8 +141,3 @@ function startTimer() {
     appendMinuts.innerHTML = minuts;
   }
 }
-
-// playAgainBtn.onclick = function() {
-//     scoreDiv.style.display = 'none';
-//     gameDiv.style.display = 'block';
-// }
