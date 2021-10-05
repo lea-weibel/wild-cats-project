@@ -66,7 +66,7 @@ for (let i = 0; i < cardGame.length; i++) {
 
     // SOUNDS
 
-    let meow = new Audio('ANMLCat_Miaulement chat 7 (ID 1895)_LS.mp3');
+    let meow = new Audio('CatMeow0.mp3');
     // document.getElementsByTagName('audio');
     console.log(meow);
 
