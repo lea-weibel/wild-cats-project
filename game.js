@@ -66,9 +66,8 @@ for (let i = 0; i < cardGame.length; i++) {
 
     // SOUNDS
 
-    let meow = new Audio('CatMeow0.mp3');
-    // document.getElementsByTagName('audio');
-    console.log(meow);
+    const meow = new Audio('/sounds/CatMeow0.mp3');
+    meow.play();
 
     revealedImg.push(card.lastElementChild);
     revealedCard.push(card);
