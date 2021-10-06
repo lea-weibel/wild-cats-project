@@ -64,11 +64,6 @@ for (let i = 0; i < cardGame.length; i++) {
     card.firstElementChild.style.display = 'none';
     card.lastElementChild.style.display = 'block';
 
-    // SOUNDS
-
-    const meow = new Audio('/sounds/CatMeow0.mp3');
-    meow.play();
-
     revealedImg.push(card.lastElementChild);
     revealedCard.push(card);
 
@@ -92,6 +87,12 @@ for (let i = 0; i < cardGame.length; i++) {
       ) {
         revealedCard[0].style.opacity = '50%';
         revealedCard[1].style.opacity = '50%';
+
+        // SOUNDS
+
+        const meow = new Audio('/sounds/CatMeow0.mp3');
+        meow.play();
+
         // push all cards to a variable for the final count
         allCards.push(revealedCard[0]);
         allCards.push(revealedCard[1]);
