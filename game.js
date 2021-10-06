@@ -1,3 +1,12 @@
+class Player {
+  constructor(name, minutes, seconds, tenths) {
+      this.name = name;
+      this.minutes = minutes;
+      this.seconds = seconds;
+      this.tenths = tenths; 
+  }
+}
+
 /***** GAME CONSTANTS *****/
 const cardGame = document.querySelectorAll('.cards');
 const playBtn = document.getElementById('play-btn');
@@ -26,9 +35,12 @@ const scoreList = document.getElementById('score-list');
 let score;
 
 /* retrieve player name */
-let playerName;
-nameBtn.onclick = function () {
-  return (playerName = player.value);
+let newPlayer;
+nameBtn.onclick = function() {
+  let playerName = player.value;
+  newPlayer = new Player(playerName);
+  console.log(newPlayer);
+  player.value = '';
 };
 
 /* ****** HOME PLAY BUTTON MAKE GAME PAGE APPEAR ****** */
@@ -114,9 +126,15 @@ for (let i = 0; i < cardGame.length; i++) {
       scoreDiv.style.display = 'block';
 
       clearInterval(myIntervalVar);
-      let score = document.createElement('p');
-      score.innerHTML = `${playerName} did it in ${appendMinuts.innerHTML}:${appendSeconds.innerHTML}:${appendTens.innerHTML}`;
-      scoreList.appendChild(score);
+
+      newPlayer.minutes = appendMinuts.innerHTML;
+      newPlayer.seconds = appendSeconds.innerHTML;
+      newPlayer.tenths = appendTens.innerHTML;
+
+      console.log(newPlayer);
+      // let score = document.createElement('p');
+      // score.innerHTML = `${playerName} did it in ${appendMinuts.innerHTML}:${appendSeconds.innerHTML}:${appendTens.innerHTML}`;
+      // scoreList.appendChild(score);
     }
   });
 }
@@ -157,4 +175,4 @@ function startTimer() {
 //     gameDiv.style.display = 'block';
 // }
 
-console.log(playerName, score);
+
