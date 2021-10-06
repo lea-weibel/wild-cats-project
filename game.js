@@ -1,11 +1,9 @@
-function Player(name, minutes, seconds, tenths) {
+function Player(name, time) {
   this.name = name;
-  this.minutes = minutes;
-  this.seconds = seconds;
-  this.tenths = tenths; 
+  this.time = time;
 }
 
-
+// RETRIEVE PLAYERS SCORE FROM LOCAL STORAGE
 window.onload = function() {
   let players;
   if (localStorage.getItem('players') !== null) {
@@ -13,8 +11,41 @@ window.onload = function() {
   console.log(players);
   }
 
+  let time = [];
+
   for (let player of players) {
-    createScoreDiv(player);
+    time.push(player.time);
+    time.sort();
+
+
+  }
+
+  for (let i = 0; i < 5; i++) {
+    console.log(time[i], i);
+
+    const newScore = document.createElement('div');
+    newScore.classList.add('player-score');
+  
+    const scoreNumber = document.createElement('h3');
+    scoreNumber.classList.add('score-number');
+    scoreNumber.innerHTML = i + 1;
+  
+    const scoreName = document.createElement('h3');
+    scoreName.classList.add('score-name');
+    for (let player of players) {
+      if (player.time === time[i]) {
+        scoreName.innerHTML = player.name;
+        break;
+      }
+    }
+  
+    const scoreTime = document.createElement('h3');
+    scoreTime.classList.add('score-time');
+    scoreTime.innerHTML = time[i];
+  
+    newScore.append(scoreNumber, scoreName, scoreTime);
+    scoreList.appendChild(newScore);
+
   }
 }
 
@@ -131,15 +162,13 @@ for (let i = 0; i < cardGame.length; i++) {
       setTimeout(reinitializeArray, 601);
     }
 
-    if (allCards.length === 12) {
+    if (allCards.length === 4) {
       gameDiv.style.display = 'none';
       scoreDiv.style.display = 'block';
 
       clearInterval(myIntervalVar);
 
-      newPlayer.minutes = appendMinuts.innerHTML;
-      newPlayer.seconds = appendSeconds.innerHTML;
-      newPlayer.tenths = appendTens.innerHTML;
+      newPlayer.time = `${appendMinuts.innerHTML}:${appendSeconds.innerHTML}:${appendTens.innerHTML}`;
 
       createScoreDiv(newPlayer);
 
@@ -206,7 +235,7 @@ function createScoreDiv(player) {
   
     const scoreNumber = document.createElement('h3');
     scoreNumber.classList.add('score-number');
-    scoreNumber.innerHTML = '2';
+    scoreNumber.innerHTML = player.index;
   
     const scoreName = document.createElement('h3');
     scoreName.classList.add('score-name');
@@ -214,7 +243,7 @@ function createScoreDiv(player) {
   
     const scoreTime = document.createElement('h3');
     scoreTime.classList.add('score-time');
-    scoreTime.innerHTML = `${player.minutes}:${player.seconds}:${player.tenths}`;
+    scoreTime.innerHTML = player.time;
   
     newScore.append(scoreNumber, scoreName, scoreTime);
     scoreList.appendChild(newScore);
