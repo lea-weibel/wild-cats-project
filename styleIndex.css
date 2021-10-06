@@ -1,5 +1,5 @@
 :root {
-  font-family: 'Lato', sans-serif; 
+  font-family: 'Lato', sans-serif;
   font-size: 16px;
   overflow: hidden;
   --dark-purple: #645e96;
@@ -33,7 +33,6 @@ a {
   text-decoration: none;
   color: var(--black);
 }
-
 
 /***** HOME PAGE HEADER *****/
 .head-container {
@@ -69,7 +68,7 @@ a {
 
 .home-cta label {
   font-size: 1.2rem;
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
 }
 
 .enter-name {
@@ -80,7 +79,7 @@ a {
   border: 2px solid var(--dark-purple);
   margin-top: 1em;
   box-sizing: border-box;
-  background-color: var(--white);  
+  background-color: var(--white);
 }
 
 .enter-name input {
@@ -116,7 +115,6 @@ a {
   font-size: 2rem;
 }
 
-
 /* Boutton Play Home Page */
 #play-btn {
   display: flex;
@@ -126,49 +124,49 @@ a {
 }
 
 svg#play {
-  width:45%;
+  width: 45%;
   margin: 40px auto;
-  display:block;
+  display: block;
   cursor: pointer;
   transform-origin: 50% 50%;
 }
-      
+
 svg#play #triangle {
-  fill:rgba(22,22,22,0);
-  transition:500ms;
+  fill: rgba(22, 22, 22, 0);
+  transition: 500ms;
   transform-origin: 50% 50%;
 }
 
 svg#play:hover #triangle {
-  fill:#d17589;
+  fill: #d17589;
   transform-origin: 50% 50%;
 }
-      
-svg #lineOne, svg #lineTwo {
+
+svg #lineOne,
+svg #lineTwo {
   transform-origin: 50% 50%;
   transition: 1s;
-} 
-      
+}
+
 svg:hover #lineOne {
   transform: rotate(260deg);
   -webkit-transform: rotate(260deg);
   -moz-transform: rotate(260deg);
   -o-transform: rotate(260deg);
   transform-origin: 50% 50%;
-} 
-      
+}
+
 svg:hover #lineTwo {
   transform: rotate(-450deg);
   transform-origin: 50% 50%;
-} 
-
+}
 
 /*****  HOME IMAGE *****/
 .home-img {
   position: absolute;
-  bottom:5%;
-  right:5%;
+  bottom: 5%;
+  right: 5%;
   width: 15%;
   height: auto;
   padding: 0;
-}  
+}
