@@ -3,51 +3,7 @@ function Player(name, time) {
   this.time = time;
 }
 
-// RETRIEVE PLAYERS SCORE FROM LOCAL STORAGE
-window.onload = function() {
-  let players;
-  if (localStorage.getItem('players') !== null) {
-  players = JSON.parse(localStorage.getItem('players'));
-  console.log(players);
-  }
-
-  let time = [];
-
-  for (let player of players) {
-    time.push(player.time);
-    time.sort();
-
-
-  }
-
-  for (let i = 0; i < 5; i++) {
-    console.log(time[i], i);
-
-    const newScore = document.createElement('div');
-    newScore.classList.add('player-score');
-  
-    const scoreNumber = document.createElement('h3');
-    scoreNumber.classList.add('score-number');
-    scoreNumber.innerHTML = i + 1;
-  
-    const scoreName = document.createElement('h3');
-    scoreName.classList.add('score-name');
-    for (let player of players) {
-      if (player.time === time[i]) {
-        scoreName.innerHTML = player.name;
-        break;
-      }
-    }
-  
-    const scoreTime = document.createElement('h3');
-    scoreTime.classList.add('score-time');
-    scoreTime.innerHTML = time[i];
-  
-    newScore.append(scoreNumber, scoreName, scoreTime);
-    scoreList.appendChild(newScore);
-
-  }
-}
+let time = [];
 
 /***** GAME CONSTANTS *****/
 const cardGame = document.querySelectorAll('.cards');
@@ -59,9 +15,9 @@ const scoreDiv = document.getElementById('score-page');
 const playAgainBtn = document.getElementById('play-again-btn');
 
 /***** TIMER CONSTANTS *****/
-let minuts = 00;
-let seconds = 00;
-let tens = 00;
+let minuts = 0;
+let seconds = 0;
+let tens = 0;
 // 1 ten = 0.01 second, 100 tens = 0.1 second
 const appendSeconds = document.getElementById('seconds');
 const appendMinuts = document.getElementById('minuts');
@@ -77,7 +33,7 @@ const scoreList = document.getElementById('score-list');
 
 /* retrieve player name */
 let newPlayer;
-nameBtn.onclick = function() {
+nameBtn.onclick = function () {
   let playerName = player.value;
   newPlayer = new Player(playerName);
   console.log(newPlayer);
@@ -162,36 +118,69 @@ for (let i = 0; i < cardGame.length; i++) {
       setTimeout(reinitializeArray, 601);
     }
 
+    /************** GAME END *****************/
     if (allCards.length === 4) {
-      gameDiv.style.display = 'none';
-      scoreDiv.style.display = 'block';
-
+      // stop timer
       clearInterval(myIntervalVar);
 
+      // retrieve time and store into object
       newPlayer.time = `${appendMinuts.innerHTML}:${appendSeconds.innerHTML}:${appendTens.innerHTML}`;
 
-      createScoreDiv(newPlayer);
-
-      console.log(newPlayer);
-
-
+      // retrieve previous players from LS if exist
       let players;
       if (localStorage.getItem('players') === null) players = [];
-      else players = JSON.parse(localStorage.getItem('players'))
-
-      players.push(newPlayer);
-
+      else players = JSON.parse(localStorage.getItem('players'));
       console.log(players);
 
+      // push new object into array containing all other players
+      players.push(newPlayer);
+
+      //reinitialize object for next one
       newPlayer = '';
 
-      console.log(`newPlayer is ${newPlayer}`);
-
+      // store updated players array in LS -- contains new player object
       localStorage.setItem('players', JSON.stringify(players));
+
+      // put all players time into a separate array and sort them
+      for (let player of players) {
+        time.push(player.time);
+        time.sort();
+      }
+
+      // create div to be displayed on score board for the fifth best
+      for (let i = 0; i < 5; i++) {
+        console.log(time[i], i);
+
+        const newScore = document.createElement('div');
+        newScore.classList.add('player-score');
+
+        const scoreNumber = document.createElement('h3');
+        scoreNumber.classList.add('score-number');
+        scoreNumber.innerHTML = i + 1;
+
+        const scoreName = document.createElement('h3');
+        scoreName.classList.add('score-name');
+        for (let player of players) {
+          if (player.time === time[i]) {
+            scoreName.innerHTML = player.name;
+            break;
+          }
+        }
+
+        const scoreTime = document.createElement('h3');
+        scoreTime.classList.add('score-time');
+        scoreTime.innerHTML = time[i];
+
+        newScore.append(scoreNumber, scoreName, scoreTime);
+        scoreList.appendChild(newScore);
+      }
+
+      // change page display
+      gameDiv.style.display = 'none';
+      scoreDiv.style.display = 'block';
     }
   });
 }
-
 
 /* TIMER FUNCTION */
 function startTimer() {
@@ -229,22 +218,22 @@ function startTimer() {
 //     gameDiv.style.display = 'block';
 // }
 
-function createScoreDiv(player) {
-  const newScore = document.createElement('div');
-    newScore.classList.add('player-score');
-  
-    const scoreNumber = document.createElement('h3');
-    scoreNumber.classList.add('score-number');
-    scoreNumber.innerHTML = player.index;
-  
-    const scoreName = document.createElement('h3');
-    scoreName.classList.add('score-name');
-    scoreName.innerHTML = player.name;
-  
-    const scoreTime = document.createElement('h3');
-    scoreTime.classList.add('score-time');
-    scoreTime.innerHTML = player.time;
-  
-    newScore.append(scoreNumber, scoreName, scoreTime);
-    scoreList.appendChild(newScore);
-}
+// function createScoreDiv(player) {
+//   const newScore = document.createElement('div');
+//   newScore.classList.add('player-score');
+
+//   const scoreNumber = document.createElement('h3');
+//   scoreNumber.classList.add('score-number');
+//   scoreNumber.innerHTML = player.index;
+
+//   const scoreName = document.createElement('h3');
+//   scoreName.classList.add('score-name');
+//   scoreName.innerHTML = player.name;
+
+// const scoreTime = document.createElement('h3');
+// scoreTime.classList.add('score-time');
+// scoreTime.innerHTML = player.time;
+
+// newScore.append(scoreNumber, scoreName, scoreTime);
+// scoreList.appendChild(newScore);
+// }
