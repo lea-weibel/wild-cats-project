@@ -1,0 +1,8 @@
+@media screen and (min-width: 1000px) {
+  .player-score {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+  #score-table {
+    width: 40%;
+  }

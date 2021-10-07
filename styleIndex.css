@@ -1,12 +1,16 @@
-body {
-  font-family: 'Lato', sans-serif; 
+:root {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
   overflow: hidden;
+  --dark-purple: #645e96;
+  --white: #f9f9fc;
+  --black: rgb(27, 27, 27);
+  --pink: #d17589;
 }
 
 /***** NAVBAR *****/
 .navbar {
-  background-color: #645e96;
-  padding: 1em;
+  background-color: var(--dark-purple);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,21 +19,20 @@ body {
 
 h1 {
   margin: 0;
-  color: #f9f9fc;
+  color: var(--white);
 }
 
 ul {
   display: flex;
   justify-content: space-between;
-  width: 20%;
+  width: 350px;
   list-style: none;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--black);
 }
-
 
 /***** HOME PAGE HEADER *****/
 .head-container {
@@ -37,11 +40,11 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   width: 80%;
-  margin: 120px auto;
+  margin: 10% auto;
 }
 
 .home-headings {
-  width: 40%;
+  width: min(100%, 500px);
 }
 
 .home-headings h2 {
@@ -59,13 +62,13 @@ a {
 }
 
 .home-cta {
-  width: 40%;
+  width: min(100%, 500px);
   padding-top: 1.3em;
 }
 
 .home-cta label {
   font-size: 1.2rem;
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
 }
 
 .enter-name {
@@ -73,28 +76,29 @@ a {
   display: flex;
   justify-content: space-between;
   border-radius: 6px;
-  border: 2px solid #645e96;
-  margin-top: .8em;
+  border: 2px solid var(--dark-purple);
+  margin-top: 1em;
   box-sizing: border-box;
-  background-color: #f9f9fc;  
+  background-color: var(--white);
 }
 
 .enter-name input {
-  background-color: #f9f9fc;
+  background-color: var(--white);
   border: none;
   border-radius: 6px;
   padding: 1em;
   outline: none;
-  caret-color: #d17589;
+  caret-color: var(--pink);
 }
 
 #name-btn {
-  width: 128px;
+  width: 8rem;
   border: none;
-  background-color:  #645e96;
+  background-color: var(--dark-purple);
   border-radius: 3px;
   cursor: pointer;
-  color: #fff;
+  color: var(--white);
+  padding: 1em;
 }
 
 #name-btn:hover {
@@ -111,7 +115,6 @@ a {
   font-size: 2rem;
 }
 
-
 /* Boutton Play Home Page */
 #play-btn {
   display: flex;
@@ -121,49 +124,49 @@ a {
 }
 
 svg#play {
-  width:45%;
+  width: 45%;
   margin: 40px auto;
-  display:block;
+  display: block;
   cursor: pointer;
   transform-origin: 50% 50%;
 }
-      
+
 svg#play #triangle {
-  fill:rgba(22,22,22,0);
-  transition:500ms;
+  fill: rgba(22, 22, 22, 0);
+  transition: 500ms;
   transform-origin: 50% 50%;
 }
 
 svg#play:hover #triangle {
-  fill:#d17589;
+  fill: #d17589;
   transform-origin: 50% 50%;
 }
-      
-svg #lineOne, svg #lineTwo {
+
+svg #lineOne,
+svg #lineTwo {
   transform-origin: 50% 50%;
   transition: 1s;
-} 
-      
+}
+
 svg:hover #lineOne {
   transform: rotate(260deg);
   -webkit-transform: rotate(260deg);
   -moz-transform: rotate(260deg);
   -o-transform: rotate(260deg);
   transform-origin: 50% 50%;
-} 
-      
+}
+
 svg:hover #lineTwo {
   transform: rotate(-450deg);
   transform-origin: 50% 50%;
-} 
-
+}
 
 /*****  HOME IMAGE *****/
 .home-img {
   position: absolute;
-  bottom:5%;
-  right:5%;
+  bottom: 5%;
+  right: 5%;
   width: 15%;
   height: auto;
   padding: 0;
-}  
+}

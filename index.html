@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="game_and_score_style.css" />
   <link rel="stylesheet" href="styleIndex.css" />
   <link rel="stylesheet" href="toggle.css">
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="score-desktop.css">
   <!-- <style>
     @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
   </style> -->
@@ -43,12 +45,12 @@
       <div class="home-cta">
         <label for="name">Ready to play?</label>
         <div class="enter-name">
-          <input type="text" placeholder="Enter your name...">
+          <input type="text" id="player-name" placeholder="Enter your name...">
           <button id="name-btn">OK</button>
         </div> <br>
         <!-- Bouton Play -->
         <div id="play-btn">
-          <a href="javascript:SwapDivsWithClick('home-page','game-page')">
+          <a>
             <svg id="play" viewBox="0 0 163 163" version="1.1" xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"="0px">
               <g fill="none">
@@ -79,55 +81,55 @@
   </div>
 
   <!-- GAME PAGE -->
-  <div id="game-page">
 
+  <div id="game-page">
     <div id="all-memory-cards">
       <div class="cards">
-        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png">
+        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png" />
       </div>
 
       <div class="cards">
-        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png">
+        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png" />
       </div>
 
       <div class="cards">
-        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png">
+        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png" />
       </div>
 
       <div class="cards">
-        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png">
+        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png" />
       </div>
 
       <div class="cards">
-        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png">
+        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png" />
       </div>
 
       <div class="cards">
-        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png">
+        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png" />
       </div>
 
       <div class="cards">
-        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png">
+        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png" />
       </div>
 
       <div class="cards">
-        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png">
+        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png" />
       </div>
 
       <div class="cards">
-        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png">
+        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png" />
       </div>
 
       <div class="cards">
-        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png">
+        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png" />
       </div>
 
       <div class="cards">
-        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png">
+        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png" />
       </div>
 
       <div class="cards">
-        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png">
+        <img alt="card-back" class="memory-card" src="images/patte-avec-fond.png" />
       </div>
     </div>
   </div>
@@ -137,36 +139,11 @@
 
     <h2 id="well-done">Well Done!</h2>
 
-    <div id="score-table">
-      <h2 id="best-times">Best times</h2>
-      <div id="score-list">
-        <div class="player-score">
-          <h3 class="score-number">1</h3>
-          <h3 class="score-name">Name</h3>
-          <h3 class="score-time">00:00</h3>
-        </div>
-        <div class="player-score">
-          <h3 class="score-number">1</h3>
-          <h3 class="score-name">Name</h3>
-          <h3 class="score-time">00:00</h3>
-        </div>
-        <div class="player-score">
-          <h3 class="score-number">1</h3>
-          <h3 class="score-name">Name</h3>
-          <h3 class="score-time">00:00</h3>
-        </div>
-        <div class="player-score">
-          <h3 class="score-number">1</h3>
-          <h3 class="score-name">Name</h3>
-          <h3 class="score-time">00:00</h3>
-        </div>
-      </div>
-    </div>
-
-    <!-- <div>
-      <button id="play-again-btn">PLAY AGAIN</button>
-      insert button html from Séléna's html
-    </div> -->
+    <table id="score-table">
+      <tr id="row0">
+        <th colspan="3" id="best-times">Best Times</th>
+      </tr>
+    </table>
 
     <img alt="Happy cat" src="images/050-kitty.png" id="happy-cat" />
   </div>
@@ -202,9 +179,13 @@
 
 
 
-  <script src="home.js"></script>
   <script src="game.js"></script>
   <script src="settings.js"></script>
+  <script src="score.js"></script>
+</body>
+
+<script src="home.js"></script>
+<script src="game.js"></script>
 </body>
 
 </html>
