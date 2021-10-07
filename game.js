@@ -109,6 +109,12 @@ for (let i = 0; i < cardGame.length; i++) {
       ) {
         revealedCard[0].style.opacity = '50%';
         revealedCard[1].style.opacity = '50%';
+
+        // SOUNDS
+
+        const meow = new Audio('/sounds/CatMeow0.mp3');
+        meow.play();
+
         // push all cards to a variable for the final count
         allCards.push(revealedCard[0]);
         allCards.push(revealedCard[1]);
@@ -212,28 +218,3 @@ function startTimer() {
     appendMinuts.innerHTML = minuts;
   }
 }
-
-// playAgainBtn.onclick = function() {
-//     scoreDiv.style.display = 'none';
-//     gameDiv.style.display = 'block';
-// }
-
-// function createScoreDiv(player) {
-//   const newScore = document.createElement('div');
-//   newScore.classList.add('player-score');
-
-//   const scoreNumber = document.createElement('h3');
-//   scoreNumber.classList.add('score-number');
-//   scoreNumber.innerHTML = player.index;
-
-//   const scoreName = document.createElement('h3');
-//   scoreName.classList.add('score-name');
-//   scoreName.innerHTML = player.name;
-
-// const scoreTime = document.createElement('h3');
-// scoreTime.classList.add('score-time');
-// scoreTime.innerHTML = player.time;
-
-// newScore.append(scoreNumber, scoreName, scoreTime);
-// scoreList.appendChild(newScore);
-// }

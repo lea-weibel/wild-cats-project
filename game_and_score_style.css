@@ -20,7 +20,7 @@ body {
   grid-template-rows: repeat(3, 1fr);
   gap: 1em;
   margin-bottom: 1em;
-} 
+}
 
 .cards {
   width: 100%;
@@ -29,13 +29,12 @@ body {
 .memory-card {
   width: 100%;
   height: auto;
-} 
+}
 
 .front-img {
   width: 100%;
   height: auto;
 }
-
 
 /****** TIMER ******/
 #timer-container {
@@ -51,15 +50,14 @@ body {
   width: 25%;
   height: auto;
   padding: 8px;
-} 
+}
 
 .timer {
-  width: 10rem;  
+  width: 10rem;
   margin: auto;
   padding-left: 1em;
   font-size: 14px;
 }
-
 
 /****** SCORE PAGE ******/
 #score-page {
@@ -95,7 +93,7 @@ body {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
   /* margin: 1rem; */
-} 
+}
 
 #play-again-btn {
   display: block;
@@ -105,4 +103,4 @@ body {
 #happy-cat {
   width: 5rem;
   margin-top: 2.5rem;
-} 
+}
