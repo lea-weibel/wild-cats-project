@@ -1,7 +1,105 @@
-/* body {
-  background-color: #ffdc9c;
-  font-family: 'Acme', sans-serif;
-} */
+body {
+  font-family: 'Lato', sans-serif; 
+  overflow: hidden;
+}
+
+/***** NAVBAR *****/
+.navbar {
+  background-color: #645e96;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 3em;
+}
+
+h1 {
+  margin: 0;
+  color: #f9f9fc;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+/***** HOME PAGE HEADER *****/
+.head-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 80%;
+  margin: 120px auto;
+}
+
+.home-headings {
+  width: 40%;
+}
+
+.home-headings h2 {
+  margin: 0;
+  font-size: 2.5rem;
+  line-height: 1.4;
+  letter-spacing: 2px;
+}
+
+.home-headings p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+
+.home-cta {
+  width: 40%;
+  padding-top: 1.3em;
+}
+
+.home-cta label {
+  font-size: 1.2rem;
+  letter-spacing: .8px;
+}
+
+.enter-name {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6px;
+  border: 2px solid #645e96;
+  margin-top: .8em;
+  box-sizing: border-box;
+  background-color: #f9f9fc;  
+}
+
+.enter-name input {
+  background-color: #f9f9fc;
+  border: none;
+  border-radius: 6px;
+  padding: 1em;
+  outline: none;
+  caret-color: #d17589;
+}
+
+#name-btn {
+  width: 128px;
+  border: none;
+  background-color:  #645e96;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+}
+
+#name-btn:hover {
+  background-color: #d17589;
+}
 
 .home-head {
   width: 80%;
@@ -10,107 +108,62 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 2rem;
 }
 
-.bigbuttonplay {
-  display: none;
-}
-
-#game-page {
-  display: none;
-}
-
-#score-page {
-  display: none;
-}
-
-   
-/*
-.welcome {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font: 36px, 'acme', sans-serif;
-  text-align: center;
-}
-
-.whatName {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font: 24px, 'acme', sans-serif;
-  text-align: center;
-}
-
-/* Boutton OK Home Page */
-
-/* .buttonOK {
-    
-    display:inline-block;
-    padding:0.3em 1.2em;
-    margin:0 0.3em 0.3em 0;
-    border-radius:2em;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Acme',sans-serif;
-    font-weight:300;
-    color:#FFFFFF;
-    background-color:#645E96;
-    text-align:center;
-    transition: all 0.2s;
-    }
-    a.button:hover{
-    background-color:#726CA8;
-    }
-    @media all and (max-width:30em){
-     a.button{
-    display:block;
-    margin:0.2em auto;
-     }
-    } */
 
 /* Boutton Play Home Page */
+#play-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
-    /* svg#play {
-      width:100px;
-      margin: 120px auto;
-      display:block;
-      cursor: pointer;
-      transform-origin: 50% 50%;
-      }
+svg#play {
+  width:45%;
+  margin: 40px auto;
+  display:block;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+}
       
-      svg#play #triangle {
-        fill:rgba(22,22,22,0);
-        transition:500ms;
-        transform-origin: 50% 50%;
-      }
-      svg#play:hover #triangle {
-        fill:#5fce43;
-        transform-origin: 50% 50%;
-      }
-      
-       svg #lineOne, svg #lineTwo {
-        transform-origin: 50% 50%;
-        transition: 1s;
-      } 
-      
-       svg:hover #lineOne {
-        transform: rotate(260deg);
-         -webkit-transform: rotate(260deg);
-      -moz-transform: rotate(260deg);
-      -o-transform: rotate(260deg);
-         transform-origin: 50% 50%;
-      } 
-      
-       svg:hover #lineTwo {
-        transform: rotate(-450deg);
-         transform-origin: 50% 50%;
-      }
+svg#play #triangle {
+  fill:rgba(22,22,22,0);
+  transition:500ms;
+  transform-origin: 50% 50%;
+}
 
-      img {
-        position:fixed;
-        bottom:0;
-        right:0;
-        margin:10px 0px 0px 20px;
-        padding:0px;
-      } */ 
+svg#play:hover #triangle {
+  fill:#d17589;
+  transform-origin: 50% 50%;
+}
+      
+svg #lineOne, svg #lineTwo {
+  transform-origin: 50% 50%;
+  transition: 1s;
+} 
+      
+svg:hover #lineOne {
+  transform: rotate(260deg);
+  -webkit-transform: rotate(260deg);
+  -moz-transform: rotate(260deg);
+  -o-transform: rotate(260deg);
+  transform-origin: 50% 50%;
+} 
+      
+svg:hover #lineTwo {
+  transform: rotate(-450deg);
+  transform-origin: 50% 50%;
+} 
+
+
+/*****  HOME IMAGE *****/
+.home-img {
+  position: absolute;
+  bottom:5%;
+  right:5%;
+  width: 15%;
+  height: auto;
+  padding: 0;
+}  
