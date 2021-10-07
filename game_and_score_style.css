@@ -110,12 +110,14 @@ th {
 }
 
 .player-score {
+  width: 80%;
+  margin: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-family: 'Lato', sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 #play-again-btn {
@@ -123,7 +125,7 @@ th {
   margin: 1rem auto;
 }
 
-*#happy-cat {
+#happy-cat {
   height: 20vh;
   position: absolute;
   bottom: 3%;

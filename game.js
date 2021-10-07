@@ -29,7 +29,7 @@ let myIntervalVar;
 /***** SCORE BOARD CONSTANTS *****/
 const player = document.querySelector('#player-name');
 const nameBtn = document.getElementById('name-btn');
-const scoreList = document.getElementById('score-list');
+const scoreTable = document.getElementById('score-table');
 
 /* retrieve player name */
 let newPlayer;
@@ -157,14 +157,14 @@ for (let i = 0; i < cardGame.length; i++) {
       for (let i = 0; i < 5; i++) {
         console.log(time[i], i);
 
-        const newScore = document.createElement('div');
+        const newScore = document.createElement('tr');
         newScore.classList.add('player-score');
 
-        const scoreNumber = document.createElement('h3');
+        const scoreNumber = document.createElement('td');
         scoreNumber.classList.add('score-number');
         scoreNumber.innerHTML = i + 1;
 
-        const scoreName = document.createElement('h3');
+        const scoreName = document.createElement('td');
         scoreName.classList.add('score-name');
         for (let player of players) {
           if (player.time === time[i]) {
@@ -173,12 +173,12 @@ for (let i = 0; i < cardGame.length; i++) {
           }
         }
 
-        const scoreTime = document.createElement('h3');
+        const scoreTime = document.createElement('td');
         scoreTime.classList.add('score-time');
         if (time[i] !== undefined) scoreTime.innerHTML = time[i];
 
         newScore.append(scoreNumber, scoreName, scoreTime);
-        scoreList.appendChild(newScore);
+        scoreTable.appendChild(newScore);
       }
 
       // change page display
