@@ -13,14 +13,17 @@
 </head>
 
 <body>
-  <div class="navbar">
-    <h1>MEmeowRY</h1>
-    <ul>
-      <li><a href="./index.html">Home</a></li>
+  <div id="mySidenav" class="sidenav">
+    <h1 id="logo">MEmeowRY</h1>
+    <ul id="links-container">
+      <li><a href="javascript:void(0)" id="closebtn" onclick="closeNav()">&times;</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="#" id="settings">Settings</a></li>
-      <li><a href="./aboutUs.html">About Us</a></li>
+      <li><a href="aboutUs.html">About Us</a></li>
     </ul>
   </div>
+  <!-- OPEN SIDENAV WHEN CLICKING BURGER ICON -->
+  <span onclick="openNav()" id="burgerIcon">☰</span>
 
   <!-- TEAM -->
   <h1>Team Members</h1>
