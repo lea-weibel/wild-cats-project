@@ -119,7 +119,7 @@ for (let i = 0; i < cardGame.length; i++) {
     }
 
     /************** GAME END *****************/
-    if (allCards.length === 4) {
+    if (allCards.length === 12) {
       // stop timer
       clearInterval(myIntervalVar);
 
