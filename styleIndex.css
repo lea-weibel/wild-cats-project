@@ -166,7 +166,7 @@ svg:hover #lineTwo {
   position: absolute;
   bottom: 10%;
   right: 5%;
-  width: 10%;
+  width: 14%;
   height: auto;
   padding: 0;
 }
@@ -178,4 +178,6 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: white;
+  font-size: 0.7rem;
+  height: 2rem;
 }

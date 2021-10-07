@@ -54,6 +54,15 @@
     /* margin-top: 2.5rem; */
   }
 
+  .home-img {
+    position: absolute;
+    bottom: 7%;
+    right: 5%;
+    width: 22%;
+    height: auto;
+    padding: 0;
+  }
+
   #burgerIcon {
     cursor: pointer;
     font-size: 3em;
