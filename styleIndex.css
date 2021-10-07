@@ -164,9 +164,9 @@ svg:hover #lineTwo {
 /*****  HOME IMAGE *****/
 .home-img {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   right: 5%;
-  width: 15%;
+  width: 10%;
   height: auto;
   padding: 0;
 }
