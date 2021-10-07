@@ -169,7 +169,7 @@ for (let i = 0; i < cardGame.length; i++) {
 
         const scoreTime = document.createElement('h3');
         scoreTime.classList.add('score-time');
-        scoreTime.innerHTML = time[i];
+        if (time[i] !== undefined) scoreTime.innerHTML = time[i];
 
         newScore.append(scoreNumber, scoreName, scoreTime);
         scoreList.appendChild(newScore);
