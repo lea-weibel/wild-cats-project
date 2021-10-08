@@ -9,17 +9,22 @@
     <link href="aboutus.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="styleIndex.css" />
     <link rel="stylesheet" href="game_and_score_style.css" />
+    <link rel="stylesheet" href="mobile.css">
   </head>
 
-  <body>
-    <div class="navbar">
-      <h1 id="nav-title">MEmeowRY</h1>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="#" id="settings">Settings</a></li>
-        <li><a href="./aboutUs.html">About Us</a></li>
+<body>
+  <div id="mySidenav" class="sidenav">
+    <!-- OPEN SIDENAV WHEN CLICKING BURGER ICON -->
+    <span id="burgerIcon">☰</span>
+      <h1 id="logo">MEmeowRY</h1>
+      <ul id="links-container">
+        <li><a href="javascript:void(0)" id="closebtn" onclick="closeNav()">&times;</a></li>
+        <li><a href="index.html">Home</a></li>
+        <!-- <li><a href="#">Settings</a></li> -->
+        <li><a href="aboutUs.html">About Us</a></li>
       </ul>
     </div>
+  
 
     <!-- TEAM -->
     <h1 id="team-title">Team Members</h1>

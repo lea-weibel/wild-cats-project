@@ -9,17 +9,29 @@
 }
 
 /***** NAVBAR *****/
-.navbar {
-  background-color: var(--dark-purple);
+/* .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em 3em;
+} */
+
+#burgerIcon {
+  display: none;
 }
 
-h1 {
+.sidenav {
+  background-color: var(--dark-purple);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 5em 1em;
+}
+
+#logo {
   margin: 0;
   color: var(--white);
+  padding-top: 0.25em;
 }
 
 ul {
@@ -29,9 +41,19 @@ ul {
   list-style: none;
 }
 
-a {
+.sidenav a {
+  /* padding: 8px 8px 8px 32px; */
   text-decoration: none;
+  /* font-family: Lato; */
+  /* font-size: 25px; */
   color: var(--black);
+  /*display: block;
+  transition: 0.3s; */
+}
+
+/* Position and style the close button (top left corner) */
+.sidenav #closebtn {
+  display: none;
 }
 
 /***** HOME PAGE HEADER *****/

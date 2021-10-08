@@ -7,38 +7,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="reset.css" />
-  <link rel="stylesheet" href="game_and_score_style.css" />
-  <link rel="stylesheet" href="styleIndex.css" />
-  <link rel="stylesheet" href="toggle.css">
-  <link rel="stylesheet" href="mobile.css">
-  <link rel="stylesheet" href="score-desktop.css">
-  <!-- <style>
-    @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
-  </style> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="game_and_score_style.css" />
+  <link rel="stylesheet" href="styleIndex.css" />
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="score-desktop.css">
 </head>
 
 <body>
-  <div class="navbar">
-    <h1 id="navbar-title">MEmeowRY</h1>
-    <ul>
-      <li><a href="./index.html">Home</a></li>
-      <li><a href="#" id="settings">Settings</a></li>
-      <li><a href="./aboutUs.html">About Us</a></li>
+
+  <div id="mySidenav" class="sidenav">
+  <!-- OPEN SIDENAV WHEN CLICKING BURGER ICON -->
+  <span id="burgerIcon">☰</span>
+    <h1 id="logo">MEmeowRY</h1>
+    <ul id="links-container">
+      <li><a href="javascript:void(0)" id="closebtn">&times;</a></li>
+      <li><a href="index.html">Home</a></li>
+      <!-- <li><a href="#">Settings</a></li> -->
+      <li><a href="aboutUs.html">About Us</a></li>
     </ul>
   </div>
 
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">Home</a>
-    <a href="#">Settings</a>
-    <a href="#">About Us</a>
-  </div>
 
   <!-- HOME PAGE -->
-  <div id="home-page">
+  <div id="home-page" class="containers">
 
     <div class="head-container">
       <div class="home-headings">
@@ -156,47 +150,10 @@
     <img alt="Happy cat" src="images/050-kitty.png" id="happy-cat" />
   </div>
 
-  <!-- SETTINGS PAGE -->
-  <div id="setting-container">
-    <div class="settings">
-      <p class="setting-option">Timer</p>
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-    </div>
-
-    <div class="settings">
-      <p class="setting-option">Dark mode</p>
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-    </div>
-
-    <div class="settings">
-      <p class="setting-option">Sound</p>
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-    </div>
-
-    <!-- <img src="/images/011-kitty-38.svg" class="setting-img"> -->
-  </div>
-
   <footer>
     <p><strong> MEmeowRY © The Wild Cats Project</strong></p>
   </footer>
 
-
-
-  <script src="game.js"></script>
-  <script src="settings.js"></script>
-  <script src="score.js"></script>
-</body>
-
-<script src="home.js"></script>
 <script src="game.js"></script>
 <script src="script.js"></script>
 </body>
