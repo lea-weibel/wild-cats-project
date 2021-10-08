@@ -13,12 +13,13 @@ closeBtn.onclick = function () {
 
 /* -- Set the width of the side navigation to 250px -- */
 function openNav() {
-  //if (window.innerWidth < 480)
-  //document.getElementById('mySidenav').style.width = '100%';
+  if (window.innerWidth < 480)
+    //document.getElementById('mySidenav').style.width = '100%';
   linksContainer.style.display = 'block';
   hamburger.style.display = 'none';
   logo.style.marginTop = '-16px';
   logo.style.marginLeft = '160px';
+
 }
 
 /* -- Set the width of the side navigation to 0 -- */
@@ -27,9 +28,13 @@ function closeNav() {
     //document.getElementById('mySidenav').style.width = '0';
     linksContainer.style.display = 'none';
     hamburger.style.display = 'block';
-    hamburger.style.marginTop = '40px';
+    // hamburger.style.marginTop = '40px';
     logo.style.margin = 'auto';
     logo.style.marginTop = '-24px';
     document.getElementById('mySidenav').style.width = '100%';
   }
 }
+
+// if (window.innerWidth > 480) {
+//   hamburger.style.display = 'none';
+// }

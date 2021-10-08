@@ -1,3 +1,9 @@
+@media screen and (min-width: 480px) {
+  #burgerIcon {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 480px) {
   :root {
     font-size: 12px;
@@ -57,8 +63,9 @@
   #burgerIcon {
     cursor: pointer;
     font-size: 3em;
-    /*color to define*/
-    display: block;
+    display: none;
+    margin-top: -28px;
+    margin-left: -32px;
   }
 
   /* -- SIDE NAVIGATION SETTINGS -- */
