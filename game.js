@@ -111,8 +111,8 @@ for (let i = 0; i < cardGame.length; i++) {
         revealedCard[1].style.opacity = '50%';
 
         // SOUNDS
-
-        const meow = new Audio('/sounds/CatMeow0.mp3');
+        let randomNb = Math.floor(Math.random() * 9);
+        const meow = new Audio(`/sounds/CatMeow${randomNb}.mp3`);
         meow.play();
 
         // push all cards to a variable for the final count
