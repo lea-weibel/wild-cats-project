@@ -1,9 +1,8 @@
 /*GENERAL SETTINGS*/
-@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 body {
   background-color: rgb(255, 220, 156);
-  font-family: 'Acme', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 footer {
   text-align: center;
@@ -12,9 +11,18 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: white;
+  font-size: 0.7rem;
+  height: 2rem;
 }
-h1 {
+#team-title {
   text-align: center;
+  font-family: 'Lato', sans-serif;
+  color: black;
+  margin-top: 4vw;
+}
+
+#nav-title {
+  font-weight: ;
 }
 
 p {
@@ -22,16 +30,32 @@ p {
 }
 
 /*TEAM MEMBERS*/
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 4rem;
+}
+
 .member {
   display: flex;
   align-items: center;
-  margin: 40px;
+  margin-bottom: 3rem;
+  margin-left: 4rem;
 }
 
+.member-name {
+  font-size: 1.5rem;
+}
+
+.phrase {
+  font-size: 1.2rem;
+  width: 22rem;
+}
 .member-img {
   background-color: rgb(240, 144, 129);
-  width: 77px;
-  height: 77px;
+  width: 10vw;
+  height: auto;
   border-radius: 100%;
 }
 
@@ -45,7 +69,7 @@ p {
 }
 
 .presentation {
-  padding-left: 32px;
+  padding-left: 3vw;
 }
 
 h3 {

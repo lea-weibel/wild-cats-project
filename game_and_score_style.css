@@ -80,6 +80,7 @@ body {
   border-radius: 10px;
   border: 2px solid var(--dark-purple);
   border-spacing: 0;
+  background-color: #ffdfda;
 }
 
 th {
